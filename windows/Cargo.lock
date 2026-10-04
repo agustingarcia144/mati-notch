@@ -609,7 +609,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "coucou"
+name = "mati-notch"
 version = "0.1.1"
 dependencies = [
  "gtk",
@@ -627,7 +627,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "coucou-hook"
+name = "mati-notch-hook"
 version = "0.1.1"
 dependencies = [
  "libc",

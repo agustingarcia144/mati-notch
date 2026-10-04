@@ -1,6 +1,7 @@
-// Coucou for Windows — app wiring and the commands the island calls.
+// mati-notch for Windows — app wiring and the commands the island calls.
 
 mod claude;
+mod cli_chat;
 mod files;
 mod hooks;
 mod integrations;
@@ -69,13 +70,13 @@ fn save_settings(app: AppHandle, shared: State<Shared>, settings: Settings) {
         (screen_changed, autostart_changed)
     };
     if let Err(err) = settings::save(&settings) {
-        eprintln!("[coucou] could not save settings: {err}");
+        eprintln!("[mati-notch] could not save settings: {err}");
     }
     if autostart_changed {
         let manager = app.autolaunch();
         let result = if settings.autostart { manager.enable() } else { manager.disable() };
         if let Err(err) = result {
-            eprintln!("[coucou] autostart: {err}");
+            eprintln!("[mati-notch] autostart: {err}");
         }
     }
     if screen_changed {
@@ -238,17 +239,26 @@ fn approval_decline(app: AppHandle, request_id: String) {
 async fn chat_send(
     shared: State<'_, Shared>,
     chat: State<'_, Chat>,
+    cli: State<'_, cli_chat::CliChat>,
     query: String,
     context: Option<ChatContext>,
 ) -> Result<ChatReply, String> {
-    let model = shared.settings.lock().unwrap().model.clone();
-    claude::send(&chat, &model, query, context).await
+    let settings = shared.settings.lock().unwrap().clone();
+    match settings.chat_provider.as_str() {
+        "claudeCLI" | "codexCLI" => cli_chat::send(&cli, settings, query, context).await,
+        "anthropic" => claude::send(&chat, &settings.model, query, context).await,
+        _ => Err("Choose a chat provider in Settings.".into()),
+    }
 }
 
 #[tauri::command]
-fn chat_reset(chat: State<Chat>) {
+fn chat_reset(chat: State<Chat>, cli: State<cli_chat::CliChat>) {
     chat.reset();
+    cli.reset();
 }
+
+#[tauri::command]
+fn chat_cancel(cli: State<cli_chat::CliChat>) { cli.cancel(); }
 
 /// Copies a dropped file into the inbox and reports its name back.
 #[tauri::command]
@@ -321,7 +331,7 @@ fn create_settings_window(app: &AppHandle) {
     let url = settings_page_url(app);
     match WebviewWindowBuilder::new(app, "settings", url)
         .additional_browser_args(BROWSER_ARGS)
-        .title("Settings — Coucou")
+        .title("Settings — mati-notch")
         .inner_size(560.0, 680.0)
         .min_inner_size(460.0, 480.0)
         .resizable(true)
@@ -374,6 +384,7 @@ pub fn run() {
         })
         .manage(Pending::default())
         .manage(Chat::default())
+        .manage(cli_chat::CliChat::default())
         .invoke_handler(tauri::generate_handler![
             boot,
             save_settings,
@@ -393,6 +404,7 @@ pub fn run() {
             log_line,
             chat_send,
             chat_reset,
+            chat_cancel,
             ingest_file,
             secret_present,
             secret_set,
@@ -422,12 +434,12 @@ pub fn run() {
             gate.set_active(true);
             island::spawn_cursor_poll(handle.clone(), gate.clone());
 
-            log::line(format!("--- Coucou {} started ---", env!("CARGO_PKG_VERSION")));
+            log::line(format!("--- mati-notch {} started ---", env!("CARGO_PKG_VERSION")));
             hooks::ensure_hook_exe(&handle);
             pipe::start(handle.clone());
             integrations::start(handle.clone());
             Ok(())
         })
         .run(tauri::generate_context!())
-        .expect("error while running Coucou");
+        .expect("error while running mati-notch");
 }

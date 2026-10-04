@@ -1,0 +1,683 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06F2AFBB5681929DB494D997 /* N8nPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761B661294AF06EA911830C /* N8nPoller.swift */; };
+		0B54C4B097742A2DC2040D5F /* NotionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5192B8D9C469673A6110BD /* NotionPoller.swift */; };
+		10FC7D1AE9662CAABADCDB79 /* UploadSequenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72201190AA1D2B8743ECDA48 /* UploadSequenceEngine.swift */; };
+		11B754B96DE889E9AB0D5546 /* N8nPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = D761B661294AF06EA911830C /* N8nPoller.swift */; };
+		11C1542F8D13E81D78CB024B /* IslandRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA4C52C063CA83202002BF /* IslandRootView.swift */; };
+		1E229FD0DD689EEF887EB719 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759BB2FC6ADAF4F71251AB7 /* AppDelegate.swift */; };
+		2213862D54909ACB6E624CD8 /* SafeWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3ADCF208D8440C0904331 /* SafeWebURL.swift */; };
+		24B9761FBA4E4128BAABB937 /* GreetingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D9F731080D4E4CC7DE87C /* GreetingCanvasView.swift */; };
+		29737FE185C368955B08AFB1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C4D073BF9A5BFD214FF11 /* SettingsView.swift */; };
+		2C662C9BE87B1AEF7F603ED3 /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170ACFB9B98E94EBA31D0F /* MusicController.swift */; };
+		2D037D7D85E09126F0351EAD /* IslandWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B946AE3C310BDAF4C664EB /* IslandWindowController.swift */; };
+		3B5F22B53E78373C08020E39 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDC870053B5D9BAB31823FF /* ClaudeService.swift */; };
+		477B7A1B256C88140CC675A2 /* ConvexStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA1B96E73AC32F777039E1 /* ConvexStore.swift */; };
+		498E62DBF5C33699BD7867E5 /* ChatMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535D165065CD92D1018A6F17 /* ChatMarkdown.swift */; };
+		4A3D42733CE6217306F410EF /* StripePoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4293C5667C20CA70255523 /* StripePoller.swift */; };
+		4B2E86A9CA9EA84D72BFA7D3 /* MatiNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D1AFDA99CDB0A3A712E3C /* MatiNotchApp.swift */; };
+		4B613FC77BCD65524DC02279 /* CalcomPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7D514E65AB3E66FB246A8 /* CalcomPoller.swift */; };
+		51FBCC03AA763D3D6CB95354 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F759BB2FC6ADAF4F71251AB7 /* AppDelegate.swift */; };
+		52B4CF2C58F1E296AD89B3E3 /* PillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37D058AD2F22643DFBDDEE /* PillCatalog.swift */; };
+		57B12A2CC0F909F0EEABFADF /* CLIChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E578CC7DCB3D0A4B311448 /* CLIChat.swift */; };
+		59126DB731C94DBA600DAC2D /* IslandScreenGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D3485D0F37F22FF4CAC60 /* IslandScreenGeometry.swift */; };
+		5928FB026526A5960105F7F0 /* AskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3017F4EE1FC06E9148F3B69 /* AskQuestion.swift */; };
+		5C0AD9F1E1B6FA61601A4374 /* IslandViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946D4125982D92BEC6DD4EE /* IslandViewContent.swift */; };
+		5C67F30F2F376183C7E3130C /* GreetingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1D9F731080D4E4CC7DE87C /* GreetingCanvasView.swift */; };
+		5ED02083F2F35B7EF14C3F71 /* ChatMarkdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535D165065CD92D1018A6F17 /* ChatMarkdown.swift */; };
+		630DB66251B319DA232E5DC2 /* UploadCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D6AE66F7BF22A38E787AB /* UploadCanvasView.swift */; };
+		6B1D01FF2B9F2AE3613C89CD /* CalcomPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE7D514E65AB3E66FB246A8 /* CalcomPoller.swift */; };
+		6C423BCB8625C1075A4F345D /* CLIChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E578CC7DCB3D0A4B311448 /* CLIChat.swift */; };
+		6D5EAA4729DA6EB4E047F87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437C4401AFFE2554456B716E /* Assets.xcassets */; };
+		6E05291AF7EDD6FE64679F9D /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBED361660A8F5F98432665 /* UserIdentity.swift */; };
+		6F6CAE4BEAE458285F26507C /* ChatMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B0CA700819CD8036DD2E0 /* ChatMarkdownView.swift */; };
+		70418B3B0520CBD905326E57 /* FileDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0438F279FBBBD88746CE1 /* FileDropView.swift */; };
+		7069167809AD1AB65C98F849 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EEDA50E1D328F62F09B04D /* AppState.swift */; };
+		7078FD8F8EC5EF2186670D3E /* IslandStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5702278EC9CF1FCED736B4C /* IslandStateMachine.swift */; };
+		7205F5E8A0957C596C1A1A8A /* BotEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A93603732415B4D177CB5 /* BotEngine.swift */; };
+		72761C2F9565065720B4E1E5 /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = D589EB8C2B031049112DF43E /* sounds */; };
+		73040427A771BC88C683723C /* AskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3017F4EE1FC06E9148F3B69 /* AskQuestion.swift */; };
+		7587C34F15D4CA4648AEFCE4 /* WindowContextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACC57FC6ED04E090F14864 /* WindowContextCapture.swift */; };
+		777DCA3F7EC569B577A1CED3 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E21962E13E3A1BF380F14A /* AppLog.swift */; };
+		78223EDE31A0C0288B979647 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47EEDA50E1D328F62F09B04D /* AppState.swift */; };
+		786C87E2DF8B4D0A297CC2A5 /* NotionPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5192B8D9C469673A6110BD /* NotionPoller.swift */; };
+		792C6F22674498FF727FD24C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87C4D073BF9A5BFD214FF11 /* SettingsView.swift */; };
+		7A16867401A41D0DA0B65481 /* IslandViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E946D4125982D92BEC6DD4EE /* IslandViewContent.swift */; };
+		7E1BE4A7F58A40FD353F7C43 /* IslandScreenGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332D3485D0F37F22FF4CAC60 /* IslandScreenGeometry.swift */; };
+		81DB02EC4BA4581BCABA3BDD /* ClaudePlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A308484BC60D003DD22CF /* ClaudePlanCardView.swift */; };
+		822E40F67565773B637FAC34 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93673CAA9360E01C7D9D8BE3 /* SoundEngine.swift */; };
+		855854B31FB0487AD2AC4BED /* UploadSequenceEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72201190AA1D2B8743ECDA48 /* UploadSequenceEngine.swift */; };
+		864004740BFB38698D07812B /* PillCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37D058AD2F22643DFBDDEE /* PillCatalog.swift */; };
+		8A50F0E83066DB33F8DDBE6D /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = D589EB8C2B031049112DF43E /* sounds */; };
+		8AD1A0E9051EE48DB6C3D20E /* ConvexViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D00D12DAC375BEE70E1C76 /* ConvexViews.swift */; };
+		8E0BE0F4CBE95294F8C8340F /* ResendPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F37AB238DD8C4917C60638 /* ResendPoller.swift */; };
+		9187163C8A34A55BF1376459 /* IslandWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54B946AE3C310BDAF4C664EB /* IslandWindowController.swift */; };
+		97A08AC9973D40AAF56A9579 /* ConvexViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D00D12DAC375BEE70E1C76 /* ConvexViews.swift */; };
+		9AEBC1DCE5C3C6914ADAE36C /* BotCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3152CDB4E7515DDA8B20C8 /* BotCanvasView.swift */; };
+		9AEEEDF54A861B4CC2035DE8 /* WindowContextCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACC57FC6ED04E090F14864 /* WindowContextCapture.swift */; };
+		9D89BBB43E80AEF4EFA1DF7B /* VercelPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22269E834B150C537B86A93 /* VercelPoller.swift */; };
+		A147F8978C3F8E2DEFF9FE28 /* MatiNotchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817D1AFDA99CDB0A3A712E3C /* MatiNotchApp.swift */; };
+		A337DAED97B70FCE6174525E /* ChatMarkdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326B0CA700819CD8036DD2E0 /* ChatMarkdownView.swift */; };
+		A6B6C7B46273F458631A83FE /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29962E88213437B63CE949F0 /* LocalChat.swift */; };
+		A70806DE6B4832F368736A88 /* UploadCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356D6AE66F7BF22A38E787AB /* UploadCanvasView.swift */; };
+		A73B3001F0C1D4F78510D623 /* ResendPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F37AB238DD8C4917C60638 /* ResendPoller.swift */; };
+		A742E28CEE71829902236FC8 /* IslandTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878659BA170439065BF2C226 /* IslandTypes.swift */; };
+		A8166A1CE230384049BAAC67 /* LocalChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29962E88213437B63CE949F0 /* LocalChat.swift */; };
+		A855DC77872D77735CE63903 /* FileDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD0438F279FBBBD88746CE1 /* FileDropView.swift */; };
+		AA606CAACC9D2F16553AF7AF /* StripePoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4293C5667C20CA70255523 /* StripePoller.swift */; };
+		AEC8768636CEECA145DF03EE /* ConvexClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5CFBD2A971C2A00890620 /* ConvexClient.swift */; };
+		AF354F4C7AD16AA95F49211A /* BotCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3152CDB4E7515DDA8B20C8 /* BotCanvasView.swift */; };
+		B16C322F792508CF3B90685E /* IslandTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878659BA170439065BF2C226 /* IslandTypes.swift */; };
+		B8BD98977040B03952398C1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437C4401AFFE2554456B716E /* Assets.xcassets */; };
+		BAC1CF35FB590D96CCE7444D /* IslandStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5702278EC9CF1FCED736B4C /* IslandStateMachine.swift */; };
+		BAE7782E3ED24FD6188AF7BB /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4170ACFB9B98E94EBA31D0F /* MusicController.swift */; };
+		BB0A54C3252FE57C967E5CB8 /* HookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88C4E9BE3DE44EC59651EBA /* HookServer.swift */; };
+		BEDD3ED1A766BCFA7E538F3D /* ConvexStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA1B96E73AC32F777039E1 /* ConvexStore.swift */; };
+		C211E7A0041419AE06C0638D /* BotEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3A93603732415B4D177CB5 /* BotEngine.swift */; };
+		C3C2F87EF277FE8A47FB8874 /* ConvexClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD5CFBD2A971C2A00890620 /* ConvexClient.swift */; };
+		C52616771DF95ABE1928FA64 /* ClaudePlanCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A308484BC60D003DD22CF /* ClaudePlanCardView.swift */; };
+		C601C821D90057A8FD66D915 /* HookServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88C4E9BE3DE44EC59651EBA /* HookServer.swift */; };
+		C7E432FBFF08DE2AD079B96A /* IslandRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCA4C52C063CA83202002BF /* IslandRootView.swift */; };
+		CB30DEDFACFE2D837617D239 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E21962E13E3A1BF380F14A /* AppLog.swift */; };
+		CF8CF26DBA7213B2BA24ADF6 /* SoundEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93673CAA9360E01C7D9D8BE3 /* SoundEngine.swift */; };
+		D34CBC78C560698B8B17CB66 /* ClaudePlanGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2CA7AA799B0FE102AE7BB /* ClaudePlanGauge.swift */; };
+		D609C77EDF37DC3EFD9EC05C /* ClaudePlanGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2CA7AA799B0FE102AE7BB /* ClaudePlanGauge.swift */; };
+		D833A97BD6C5C31B74AEF82E /* UserIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBED361660A8F5F98432665 /* UserIdentity.swift */; };
+		D9A53925E9E586273EB96539 /* VercelPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22269E834B150C537B86A93 /* VercelPoller.swift */; };
+		DB22C16E23DAC69DA47B8B11 /* GithubPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1C80138883503CD2A2700 /* GithubPoller.swift */; };
+		E96E35B36B8C1FD6DC1B8C89 /* GithubPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC1C80138883503CD2A2700 /* GithubPoller.swift */; };
+		F400A989BE5108FBE54C9EDD /* SafeWebURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D3ADCF208D8440C0904331 /* SafeWebURL.swift */; };
+		FB9DAF9E679907947DEB7513 /* ClaudeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDC870053B5D9BAB31823FF /* ClaudeService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		08F37AB238DD8C4917C60638 /* ResendPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendPoller.swift; sourceTree = "<group>"; };
+		0E3A93603732415B4D177CB5 /* BotEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotEngine.swift; sourceTree = "<group>"; };
+		1DC1C80138883503CD2A2700 /* GithubPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPoller.swift; sourceTree = "<group>"; };
+		29962E88213437B63CE949F0 /* LocalChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalChat.swift; sourceTree = "<group>"; };
+		326B0CA700819CD8036DD2E0 /* ChatMarkdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMarkdownView.swift; sourceTree = "<group>"; };
+		332D3485D0F37F22FF4CAC60 /* IslandScreenGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandScreenGeometry.swift; sourceTree = "<group>"; };
+		356D6AE66F7BF22A38E787AB /* UploadCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadCanvasView.swift; sourceTree = "<group>"; };
+		3A3152CDB4E7515DDA8B20C8 /* BotCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotCanvasView.swift; sourceTree = "<group>"; };
+		3F5192B8D9C469673A6110BD /* NotionPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionPoller.swift; sourceTree = "<group>"; };
+		437C4401AFFE2554456B716E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47E578CC7DCB3D0A4B311448 /* CLIChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLIChat.swift; sourceTree = "<group>"; };
+		47EEDA50E1D328F62F09B04D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		535D165065CD92D1018A6F17 /* ChatMarkdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMarkdown.swift; sourceTree = "<group>"; };
+		54B946AE3C310BDAF4C664EB /* IslandWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandWindowController.swift; sourceTree = "<group>"; };
+		5BBED361660A8F5F98432665 /* UserIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIdentity.swift; sourceTree = "<group>"; };
+		654A308484BC60D003DD22CF /* ClaudePlanCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudePlanCardView.swift; sourceTree = "<group>"; };
+		69D29E58A8CE981D418929C7 /* mati-notchAppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mati-notchAppStore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCA1B96E73AC32F777039E1 /* ConvexStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexStore.swift; sourceTree = "<group>"; };
+		72201190AA1D2B8743ECDA48 /* UploadSequenceEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadSequenceEngine.swift; sourceTree = "<group>"; };
+		7BD0438F279FBBBD88746CE1 /* FileDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropView.swift; sourceTree = "<group>"; };
+		817D1AFDA99CDB0A3A712E3C /* MatiNotchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatiNotchApp.swift; sourceTree = "<group>"; };
+		878659BA170439065BF2C226 /* IslandTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandTypes.swift; sourceTree = "<group>"; };
+		89D00D12DAC375BEE70E1C76 /* ConvexViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexViews.swift; sourceTree = "<group>"; };
+		93673CAA9360E01C7D9D8BE3 /* SoundEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEngine.swift; sourceTree = "<group>"; };
+		9CE7D514E65AB3E66FB246A8 /* CalcomPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcomPoller.swift; sourceTree = "<group>"; };
+		A5702278EC9CF1FCED736B4C /* IslandStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandStateMachine.swift; sourceTree = "<group>"; };
+		A9E21962E13E3A1BF380F14A /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
+		B4170ACFB9B98E94EBA31D0F /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		BB1D9F731080D4E4CC7DE87C /* GreetingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingCanvasView.swift; sourceTree = "<group>"; };
+		BF37D058AD2F22643DFBDDEE /* PillCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillCatalog.swift; sourceTree = "<group>"; };
+		BFDC870053B5D9BAB31823FF /* ClaudeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeService.swift; sourceTree = "<group>"; };
+		C7D3ADCF208D8440C0904331 /* SafeWebURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeWebURL.swift; sourceTree = "<group>"; };
+		C8ACC57FC6ED04E090F14864 /* WindowContextCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowContextCapture.swift; sourceTree = "<group>"; };
+		D3017F4EE1FC06E9148F3B69 /* AskQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskQuestion.swift; sourceTree = "<group>"; };
+		D589EB8C2B031049112DF43E /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sounds; path = Resources/sounds; sourceTree = SOURCE_ROOT; };
+		D761B661294AF06EA911830C /* N8nPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = N8nPoller.swift; sourceTree = "<group>"; };
+		D87C4D073BF9A5BFD214FF11 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DDCA4C52C063CA83202002BF /* IslandRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandRootView.swift; sourceTree = "<group>"; };
+		E22269E834B150C537B86A93 /* VercelPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VercelPoller.swift; sourceTree = "<group>"; };
+		E946D4125982D92BEC6DD4EE /* IslandViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IslandViewContent.swift; sourceTree = "<group>"; };
+		EBD5CFBD2A971C2A00890620 /* ConvexClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexClient.swift; sourceTree = "<group>"; };
+		F663BA2E3F05000506981503 /* mati-notch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mati-notch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F759BB2FC6ADAF4F71251AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F88C4E9BE3DE44EC59651EBA /* HookServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookServer.swift; sourceTree = "<group>"; };
+		FAB2CA7AA799B0FE102AE7BB /* ClaudePlanGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudePlanGauge.swift; sourceTree = "<group>"; };
+		FD4293C5667C20CA70255523 /* StripePoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripePoller.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		06CC37FD1A41AF3EE2EE2757 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B85C08A7C03F5D91363D4CE5 /* App */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		0CF6C8C0D061E5949D2E2BCF = {
+			isa = PBXGroup;
+			children = (
+				437C4401AFFE2554456B716E /* Assets.xcassets */,
+				9B8933A55A4EE2DDA1B88E16 /* Resources */,
+				06CC37FD1A41AF3EE2EE2757 /* Sources */,
+				D2A73C2732DDBCB36F2F8BEB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B8933A55A4EE2DDA1B88E16 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D589EB8C2B031049112DF43E /* sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B85C08A7C03F5D91363D4CE5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F759BB2FC6ADAF4F71251AB7 /* AppDelegate.swift */,
+				A9E21962E13E3A1BF380F14A /* AppLog.swift */,
+				47EEDA50E1D328F62F09B04D /* AppState.swift */,
+				D3017F4EE1FC06E9148F3B69 /* AskQuestion.swift */,
+				3A3152CDB4E7515DDA8B20C8 /* BotCanvasView.swift */,
+				0E3A93603732415B4D177CB5 /* BotEngine.swift */,
+				9CE7D514E65AB3E66FB246A8 /* CalcomPoller.swift */,
+				535D165065CD92D1018A6F17 /* ChatMarkdown.swift */,
+				326B0CA700819CD8036DD2E0 /* ChatMarkdownView.swift */,
+				654A308484BC60D003DD22CF /* ClaudePlanCardView.swift */,
+				FAB2CA7AA799B0FE102AE7BB /* ClaudePlanGauge.swift */,
+				BFDC870053B5D9BAB31823FF /* ClaudeService.swift */,
+				47E578CC7DCB3D0A4B311448 /* CLIChat.swift */,
+				EBD5CFBD2A971C2A00890620 /* ConvexClient.swift */,
+				6CCA1B96E73AC32F777039E1 /* ConvexStore.swift */,
+				89D00D12DAC375BEE70E1C76 /* ConvexViews.swift */,
+				7BD0438F279FBBBD88746CE1 /* FileDropView.swift */,
+				1DC1C80138883503CD2A2700 /* GithubPoller.swift */,
+				BB1D9F731080D4E4CC7DE87C /* GreetingCanvasView.swift */,
+				F88C4E9BE3DE44EC59651EBA /* HookServer.swift */,
+				DDCA4C52C063CA83202002BF /* IslandRootView.swift */,
+				332D3485D0F37F22FF4CAC60 /* IslandScreenGeometry.swift */,
+				A5702278EC9CF1FCED736B4C /* IslandStateMachine.swift */,
+				878659BA170439065BF2C226 /* IslandTypes.swift */,
+				E946D4125982D92BEC6DD4EE /* IslandViewContent.swift */,
+				54B946AE3C310BDAF4C664EB /* IslandWindowController.swift */,
+				29962E88213437B63CE949F0 /* LocalChat.swift */,
+				817D1AFDA99CDB0A3A712E3C /* MatiNotchApp.swift */,
+				B4170ACFB9B98E94EBA31D0F /* MusicController.swift */,
+				D761B661294AF06EA911830C /* N8nPoller.swift */,
+				3F5192B8D9C469673A6110BD /* NotionPoller.swift */,
+				BF37D058AD2F22643DFBDDEE /* PillCatalog.swift */,
+				08F37AB238DD8C4917C60638 /* ResendPoller.swift */,
+				C7D3ADCF208D8440C0904331 /* SafeWebURL.swift */,
+				D87C4D073BF9A5BFD214FF11 /* SettingsView.swift */,
+				93673CAA9360E01C7D9D8BE3 /* SoundEngine.swift */,
+				FD4293C5667C20CA70255523 /* StripePoller.swift */,
+				356D6AE66F7BF22A38E787AB /* UploadCanvasView.swift */,
+				72201190AA1D2B8743ECDA48 /* UploadSequenceEngine.swift */,
+				5BBED361660A8F5F98432665 /* UserIdentity.swift */,
+				E22269E834B150C537B86A93 /* VercelPoller.swift */,
+				C8ACC57FC6ED04E090F14864 /* WindowContextCapture.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D2A73C2732DDBCB36F2F8BEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F663BA2E3F05000506981503 /* mati-notch.app */,
+				69D29E58A8CE981D418929C7 /* mati-notchAppStore.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9691A218683FF98050CA1B26 /* mati-notch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2BFC0DCBC16F86BB39680F7 /* Build configuration list for PBXNativeTarget "mati-notch" */;
+			buildPhases = (
+				7FCC99351F4E5CD93ECD2098 /* Sources */,
+				AAE02C2B737A8034FE77B831 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mati-notch";
+			packageProductDependencies = (
+			);
+			productName = "mati-notch";
+			productReference = F663BA2E3F05000506981503 /* mati-notch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B4338F4919C51DEE261B78F9 /* mati-notchAppStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7C186ABE0F19ACFA7AE9DA5 /* Build configuration list for PBXNativeTarget "mati-notchAppStore" */;
+			buildPhases = (
+				7FED14EF3ECA2559672830C6 /* Sources */,
+				215637F8F41CCFFCC659C671 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mati-notchAppStore";
+			packageProductDependencies = (
+			);
+			productName = "mati-notchAppStore";
+			productReference = 69D29E58A8CE981D418929C7 /* mati-notchAppStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE8E632551605A585939782C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+				TargetAttributes = {
+					9691A218683FF98050CA1B26 = {
+						ProvisioningStyle = Manual;
+					};
+					B4338F4919C51DEE261B78F9 = {
+						DevelopmentTeam = 256AUJ9555;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 75AA0F2FBD2B1A2649799E3E /* Build configuration list for PBXProject "mati-notch" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0CF6C8C0D061E5949D2E2BCF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D2A73C2732DDBCB36F2F8BEB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9691A218683FF98050CA1B26 /* mati-notch */,
+				B4338F4919C51DEE261B78F9 /* mati-notchAppStore */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		215637F8F41CCFFCC659C671 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8BD98977040B03952398C1C /* Assets.xcassets in Resources */,
+				8A50F0E83066DB33F8DDBE6D /* sounds in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAE02C2B737A8034FE77B831 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D5EAA4729DA6EB4E047F87B /* Assets.xcassets in Resources */,
+				72761C2F9565065720B4E1E5 /* sounds in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FCC99351F4E5CD93ECD2098 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51FBCC03AA763D3D6CB95354 /* AppDelegate.swift in Sources */,
+				CB30DEDFACFE2D837617D239 /* AppLog.swift in Sources */,
+				7069167809AD1AB65C98F849 /* AppState.swift in Sources */,
+				5928FB026526A5960105F7F0 /* AskQuestion.swift in Sources */,
+				9AEBC1DCE5C3C6914ADAE36C /* BotCanvasView.swift in Sources */,
+				C211E7A0041419AE06C0638D /* BotEngine.swift in Sources */,
+				6C423BCB8625C1075A4F345D /* CLIChat.swift in Sources */,
+				6B1D01FF2B9F2AE3613C89CD /* CalcomPoller.swift in Sources */,
+				498E62DBF5C33699BD7867E5 /* ChatMarkdown.swift in Sources */,
+				6F6CAE4BEAE458285F26507C /* ChatMarkdownView.swift in Sources */,
+				81DB02EC4BA4581BCABA3BDD /* ClaudePlanCardView.swift in Sources */,
+				D609C77EDF37DC3EFD9EC05C /* ClaudePlanGauge.swift in Sources */,
+				3B5F22B53E78373C08020E39 /* ClaudeService.swift in Sources */,
+				AEC8768636CEECA145DF03EE /* ConvexClient.swift in Sources */,
+				BEDD3ED1A766BCFA7E538F3D /* ConvexStore.swift in Sources */,
+				8AD1A0E9051EE48DB6C3D20E /* ConvexViews.swift in Sources */,
+				70418B3B0520CBD905326E57 /* FileDropView.swift in Sources */,
+				DB22C16E23DAC69DA47B8B11 /* GithubPoller.swift in Sources */,
+				5C67F30F2F376183C7E3130C /* GreetingCanvasView.swift in Sources */,
+				BB0A54C3252FE57C967E5CB8 /* HookServer.swift in Sources */,
+				11C1542F8D13E81D78CB024B /* IslandRootView.swift in Sources */,
+				7E1BE4A7F58A40FD353F7C43 /* IslandScreenGeometry.swift in Sources */,
+				7078FD8F8EC5EF2186670D3E /* IslandStateMachine.swift in Sources */,
+				A742E28CEE71829902236FC8 /* IslandTypes.swift in Sources */,
+				5C0AD9F1E1B6FA61601A4374 /* IslandViewContent.swift in Sources */,
+				2D037D7D85E09126F0351EAD /* IslandWindowController.swift in Sources */,
+				A6B6C7B46273F458631A83FE /* LocalChat.swift in Sources */,
+				A147F8978C3F8E2DEFF9FE28 /* MatiNotchApp.swift in Sources */,
+				BAE7782E3ED24FD6188AF7BB /* MusicController.swift in Sources */,
+				06F2AFBB5681929DB494D997 /* N8nPoller.swift in Sources */,
+				0B54C4B097742A2DC2040D5F /* NotionPoller.swift in Sources */,
+				864004740BFB38698D07812B /* PillCatalog.swift in Sources */,
+				8E0BE0F4CBE95294F8C8340F /* ResendPoller.swift in Sources */,
+				F400A989BE5108FBE54C9EDD /* SafeWebURL.swift in Sources */,
+				792C6F22674498FF727FD24C /* SettingsView.swift in Sources */,
+				CF8CF26DBA7213B2BA24ADF6 /* SoundEngine.swift in Sources */,
+				AA606CAACC9D2F16553AF7AF /* StripePoller.swift in Sources */,
+				A70806DE6B4832F368736A88 /* UploadCanvasView.swift in Sources */,
+				10FC7D1AE9662CAABADCDB79 /* UploadSequenceEngine.swift in Sources */,
+				D833A97BD6C5C31B74AEF82E /* UserIdentity.swift in Sources */,
+				9D89BBB43E80AEF4EFA1DF7B /* VercelPoller.swift in Sources */,
+				7587C34F15D4CA4648AEFCE4 /* WindowContextCapture.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FED14EF3ECA2559672830C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E229FD0DD689EEF887EB719 /* AppDelegate.swift in Sources */,
+				777DCA3F7EC569B577A1CED3 /* AppLog.swift in Sources */,
+				78223EDE31A0C0288B979647 /* AppState.swift in Sources */,
+				73040427A771BC88C683723C /* AskQuestion.swift in Sources */,
+				AF354F4C7AD16AA95F49211A /* BotCanvasView.swift in Sources */,
+				7205F5E8A0957C596C1A1A8A /* BotEngine.swift in Sources */,
+				57B12A2CC0F909F0EEABFADF /* CLIChat.swift in Sources */,
+				4B613FC77BCD65524DC02279 /* CalcomPoller.swift in Sources */,
+				5ED02083F2F35B7EF14C3F71 /* ChatMarkdown.swift in Sources */,
+				A337DAED97B70FCE6174525E /* ChatMarkdownView.swift in Sources */,
+				C52616771DF95ABE1928FA64 /* ClaudePlanCardView.swift in Sources */,
+				D34CBC78C560698B8B17CB66 /* ClaudePlanGauge.swift in Sources */,
+				FB9DAF9E679907947DEB7513 /* ClaudeService.swift in Sources */,
+				C3C2F87EF277FE8A47FB8874 /* ConvexClient.swift in Sources */,
+				477B7A1B256C88140CC675A2 /* ConvexStore.swift in Sources */,
+				97A08AC9973D40AAF56A9579 /* ConvexViews.swift in Sources */,
+				A855DC77872D77735CE63903 /* FileDropView.swift in Sources */,
+				E96E35B36B8C1FD6DC1B8C89 /* GithubPoller.swift in Sources */,
+				24B9761FBA4E4128BAABB937 /* GreetingCanvasView.swift in Sources */,
+				C601C821D90057A8FD66D915 /* HookServer.swift in Sources */,
+				C7E432FBFF08DE2AD079B96A /* IslandRootView.swift in Sources */,
+				59126DB731C94DBA600DAC2D /* IslandScreenGeometry.swift in Sources */,
+				BAC1CF35FB590D96CCE7444D /* IslandStateMachine.swift in Sources */,
+				B16C322F792508CF3B90685E /* IslandTypes.swift in Sources */,
+				7A16867401A41D0DA0B65481 /* IslandViewContent.swift in Sources */,
+				9187163C8A34A55BF1376459 /* IslandWindowController.swift in Sources */,
+				A8166A1CE230384049BAAC67 /* LocalChat.swift in Sources */,
+				4B2E86A9CA9EA84D72BFA7D3 /* MatiNotchApp.swift in Sources */,
+				2C662C9BE87B1AEF7F603ED3 /* MusicController.swift in Sources */,
+				11B754B96DE889E9AB0D5546 /* N8nPoller.swift in Sources */,
+				786C87E2DF8B4D0A297CC2A5 /* NotionPoller.swift in Sources */,
+				52B4CF2C58F1E296AD89B3E3 /* PillCatalog.swift in Sources */,
+				A73B3001F0C1D4F78510D623 /* ResendPoller.swift in Sources */,
+				2213862D54909ACB6E624CD8 /* SafeWebURL.swift in Sources */,
+				29737FE185C368955B08AFB1 /* SettingsView.swift in Sources */,
+				822E40F67565773B637FAC34 /* SoundEngine.swift in Sources */,
+				4A3D42733CE6217306F410EF /* StripePoller.swift in Sources */,
+				630DB66251B319DA232E5DC2 /* UploadCanvasView.swift in Sources */,
+				855854B31FB0487AD2AC4BED /* UploadSequenceEngine.swift in Sources */,
+				6E05291AF7EDD6FE64679F9D /* UserIdentity.swift in Sources */,
+				D9A53925E9E586273EB96539 /* VercelPoller.swift in Sources */,
+				9AEEEDF54A861B4CC2035DE8 /* WindowContextCapture.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		42311DE5D7BDB531344B1D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_ENTITLEMENTS = "Resources/mati-notchAppStore.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 256AUJ9555;
+				INFOPLIST_FILE = Resources/InfoAppStore.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.louisraille.mati-notch.appstore";
+				PRODUCT_NAME = "mati-notch";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
+			};
+			name = Release;
+		};
+		868249A2329F3F374D7D5C27 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGN_ENTITLEMENTS = "Resources/mati-notchAppStore.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 256AUJ9555;
+				INFOPLIST_FILE = Resources/InfoAppStore.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.louisraille.mati-notch.appstore";
+				PRODUCT_NAME = "mati-notch";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
+			};
+			name = Debug;
+		};
+		8D8CBD184750F75B4A6CF6A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_SANDBOX = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.louisraille.mati-notch";
+				PRODUCT_NAME = "mati-notch";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C779E70CA7D0D275F72990D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_SANDBOX = NO;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.louisraille.mati-notch";
+				PRODUCT_NAME = "mati-notch";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C8E3258DBF7AF56A8D7DC777 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-strict-concurrency=complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		DAF859B84C51661E450485AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_ENTITLEMENTS = "Resources/mati-notch.entitlements";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 256AUJ9555;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_CODE_SIGN_FLAGS = "--timestamp";
+				OTHER_SWIFT_FLAGS = "-strict-concurrency=complete";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75AA0F2FBD2B1A2649799E3E /* Build configuration list for PBXProject "mati-notch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8E3258DBF7AF56A8D7DC777 /* Debug */,
+				DAF859B84C51661E450485AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A2BFC0DCBC16F86BB39680F7 /* Build configuration list for PBXNativeTarget "mati-notch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C779E70CA7D0D275F72990D9 /* Debug */,
+				8D8CBD184750F75B4A6CF6A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C7C186ABE0F19ACFA7AE9DA5 /* Build configuration list for PBXNativeTarget "mati-notchAppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				868249A2329F3F374D7D5C27 /* Debug */,
+				42311DE5D7BDB531344B1D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE8E632551605A585939782C /* Project object */;
+}

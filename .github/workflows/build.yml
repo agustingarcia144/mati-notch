@@ -16,7 +16,7 @@ jobs:
         run: brew install xcodegen
 
       - name: Generate project
-        run: cd NotchBuddy && xcodegen
+        run: cd mati-notch && xcodegen
 
       - name: Test screen geometry
         run: bash scripts/test-screen-geometry.sh
@@ -33,11 +33,14 @@ jobs:
       - name: Test ask question
         run: bash scripts/test-ask-question.sh
 
+      - name: Test CLI chat
+        run: bash scripts/test-cli-chat.sh
+
       - name: Build
         run: |
           xcodebuild \
-            -project NotchBuddy/NotchBuddy.xcodeproj \
-            -scheme NotchBuddy \
+            -project mati-notch/mati-notch.xcodeproj \
+            -scheme mati-notch \
             -configuration Release \
             build \
             CODE_SIGNING_ALLOWED=NO \

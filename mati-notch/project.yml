@@ -1,0 +1,122 @@
+name: mati-notch
+options:
+  bundleIdPrefix: fr.louisraille
+  deploymentTarget:
+    macOS: "15.0"
+  xcodeVersion: "27.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Manual
+    OTHER_SWIFT_FLAGS: "-strict-concurrency=complete"
+  configs:
+    Debug:
+      CODE_SIGNING_REQUIRED: NO
+      CODE_SIGNING_ALLOWED: NO
+    Release:
+      CODE_SIGNING_REQUIRED: YES
+      CODE_SIGNING_ALLOWED: YES
+      CODE_SIGN_IDENTITY: "Developer ID Application"
+      DEVELOPMENT_TEAM: 256AUJ9555
+      OTHER_CODE_SIGN_FLAGS: "--timestamp"
+      CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
+      CODE_SIGN_ENTITLEMENTS: Resources/mati-notch.entitlements
+
+schemes:
+  mati-notch:
+    build:
+      targets:
+        mati-notch: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+  mati-notchAppStore:
+    build:
+      targets:
+        mati-notchAppStore: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+
+targets:
+  mati-notch:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        type: group
+      - path: Assets.xcassets
+        buildPhase: resources
+      - path: Resources/sounds
+        buildPhase: resources
+        type: folder
+    info:
+      path: Resources/Info.plist
+      properties:
+        CFBundleName: mati-notch
+        CFBundleDisplayName: mati-notch
+        CFBundleIdentifier: fr.louisraille.mati-notch
+        CFBundleVersion: "3"
+        CFBundleShortVersionString: "0.1.2"
+        CFBundlePackageType: APPL
+        LSUIElement: YES
+        NSHighResolutionCapable: YES
+        NSSupportsAutomaticGraphicsSwitching: YES
+        NSAppleEventsUsageDescription: "Pour sauter au terminal, envoyer des mails et piloter Musique."
+        NSAccessibilityUsageDescription: "Pour lire le titre de la fenêtre active et l'attacher comme contexte."
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.louisraille.mati-notch
+        PRODUCT_NAME: mati-notch
+        INFOPLIST_FILE: Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        MACOSX_DEPLOYMENT_TARGET: "15.0"
+        ENABLE_SANDBOX: NO
+
+  mati-notchAppStore:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources
+        type: group
+      - path: Assets.xcassets
+        buildPhase: resources
+      - path: Resources/sounds
+        buildPhase: resources
+        type: folder
+    info:
+      path: Resources/InfoAppStore.plist
+      properties:
+        CFBundleName: mati-notch
+        CFBundleDisplayName: mati-notch
+        CFBundleIdentifier: fr.louisraille.mati-notch.appstore
+        CFBundleVersion: "4"
+        CFBundleShortVersionString: "1.0"
+        CFBundlePackageType: APPL
+        LSUIElement: YES
+        NSHighResolutionCapable: YES
+        NSSupportsAutomaticGraphicsSwitching: YES
+        LSApplicationCategoryType: public.app-category.developer-tools
+        ITSAppUsesNonExemptEncryption: NO
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.louisraille.mati-notch.appstore
+        PRODUCT_NAME: mati-notch
+        INFOPLIST_FILE: Resources/InfoAppStore.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        MACOSX_DEPLOYMENT_TARGET: "15.0"
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "Apple Development"
+        CODE_SIGN_ENTITLEMENTS: Resources/mati-notchAppStore.entitlements
+        DEVELOPMENT_TEAM: 256AUJ9555
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: APPSTORE
+        CODE_SIGNING_ALLOWED: YES

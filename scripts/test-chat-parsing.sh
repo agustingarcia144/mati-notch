@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-TEST_DIR="$(mktemp -d "${TMPDIR:-/tmp}/coucou-chat-parsing.XXXXXX")"
+TEST_DIR="$(mktemp -d "${TMPDIR:-/tmp}/mati-notch-chat-parsing.XXXXXX")"
 SERVER_PID=""
 trap 'rm -rf "$TEST_DIR"; [ -n "$SERVER_PID" ] && kill "$SERVER_PID" 2>/dev/null || true' EXIT
 
@@ -16,8 +16,8 @@ SERVER_PID=$!
 # Compilation typically takes a few seconds, which gives the server plenty of
 # time to bind and write its port — avoiding a busy-wait on fast machines.
 swiftc \
-    NotchBuddy/Sources/App/LocalChat.swift \
-    NotchBuddy/Sources/App/ChatMarkdown.swift \
+    mati-notch/Sources/App/LocalChat.swift \
+    mati-notch/Sources/App/ChatMarkdown.swift \
     tests/ChatParsingTests.swift \
     -o "$TEST_DIR/chat-parsing-tests"
 

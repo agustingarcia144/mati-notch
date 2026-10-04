@@ -46,12 +46,43 @@ export function buildPrompt(onHeightChange: () => void): ViewHost {
     spellcheck: "false",
   }) as HTMLInputElement;
   const send = h("button", { class: "send-btn", title: "Send" }, svg(ICONS.arrowUp, 11));
-  const bar = h("div", { class: "chat-bar" }, input, send);
+  const stop = h("button", { class: "send-btn", title: "Stop", text: "■" });
+  stop.style.display = "none";
+  stop.addEventListener("click", () => void Bridge.chatCancel());
+  const provider = h("select", { title: "Chat provider", style: "max-width:135px;font-size:11px;margin-bottom:6px" }) as HTMLSelectElement;
+  for (const [value, label] of [["claudeCLI", "Claude Code"], ["codexCLI", "Codex"], ["anthropic", "Anthropic API"]]) {
+    provider.append(h("option", { value, text: label }));
+  }
+  provider.value = State.settings.chatProvider;
+  provider.addEventListener("change", async () => {
+    const previous = State.settings.chatProvider;
+    provider.disabled = true;
+    try {
+      const next = { ...State.settings, chatProvider: provider.value as typeof State.settings.chatProvider };
+      await Bridge.saveChatSettings(next);
+      State.settings = next;
+      await Bridge.chatReset();
+      State.chatHistory = [];
+      State.notify();
+    } catch {
+      provider.value = previous;
+    } finally { provider.disabled = false; }
+  });
+  const fresh = h("button", { text: "New chat", style: "font-size:11px;margin-left:8px" });
+  fresh.addEventListener("click", async () => {
+    if (sending) return;
+    await Bridge.chatReset();
+    State.chatHistory = [];
+    State.droppedFile = null;
+    State.notify();
+  });
+  const options = h("div", {}, provider, fresh);
+  const bar = h("div", { class: "chat-bar" }, input, send, stop);
 
   const el = h(
     "div",
     { class: "view" },
-    h("div", { class: "card wash chat-card" }, h("div", { class: "chat-body" }, chipRow, log, bar)),
+    h("div", { class: "card wash chat-card" }, h("div", { class: "chat-body" }, chipRow, log, options, bar)),
   );
   (el.querySelector(".card") as HTMLElement).style.setProperty("--wash", "rgba(99,102,241,0.5)");
 
@@ -81,9 +112,12 @@ export function buildPrompt(onHeightChange: () => void): ViewHost {
       Sound.play("finish");
     } catch (err) {
       State.stateOverride = null;
-      State.noteMessage = String(err).replace(/^Error:\s*/, "");
-      State.view = "note";
-      Sound.play("error");
+      const message = String(err).replace(/^Error:\s*/, "");
+      if (message !== "Chat stopped.") {
+        State.noteMessage = message;
+        State.view = "note";
+        Sound.play("error");
+      }
     } finally {
       sending = false;
       State.notify();
@@ -124,6 +158,11 @@ export function buildPrompt(onHeightChange: () => void): ViewHost {
 
       input.placeholder = State.chatHistory.length === 0 ? "Ask me anything…" : "Continue…";
       input.disabled = sending;
+      send.disabled = sending;
+      provider.disabled = sending;
+      fresh.disabled = sending;
+      provider.value = State.settings.chatProvider;
+      stop.style.display = sending && State.settings.chatProvider !== "anthropic" ? "" : "none";
     },
     focus() {
       input.focus();

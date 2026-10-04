@@ -20,7 +20,20 @@ pub struct Settings {
     /// Defaulted explicitly so a settings.json written by an older build still loads.
     #[serde(default = "default_model")]
     pub model: String,
+    #[serde(default = "default_chat_provider")]
+    pub chat_provider: String,
+    #[serde(default)]
+    pub claude_cli_path: String,
+    #[serde(default)]
+    pub codex_cli_path: String,
+    #[serde(default = "default_cli_model")]
+    pub claude_cli_model: String,
+    #[serde(default = "default_cli_model")]
+    pub codex_cli_model: String,
 }
+
+fn default_chat_provider() -> String { "claudeCLI".into() }
+fn default_cli_model() -> String { "default".into() }
 
 fn default_model() -> String {
     crate::claude::DEFAULT_MODEL.to_string()
@@ -43,6 +56,11 @@ impl Default for Settings {
             autostart: false,
             hooks_installed: false,
             model: default_model(),
+            chat_provider: default_chat_provider(),
+            claude_cli_path: String::new(),
+            codex_cli_path: String::new(),
+            claude_cli_model: default_cli_model(),
+            codex_cli_model: default_cli_model(),
         }
     }
 }

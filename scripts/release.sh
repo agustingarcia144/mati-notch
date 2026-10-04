@@ -1,20 +1,20 @@
 #!/usr/bin/env bash
-# Builds, notarizes and publishes Coucou for macOS (GitHub build).
+# Builds, notarizes and publishes mati-notch for macOS (GitHub build).
 #
 #   ./scripts/release.sh 0.1.2            build, sign, notarize, staple, tag, publish
 #   ./scripts/release.sh 0.1.2 --finish   finish after an interrupted notarization wait
 #
 # Run it from a clean checkout of main. CFBundleShortVersionString in
-# NotchBuddy/project.yml must match the version, and CHANGELOG.md needs a
+# mati-notch/project.yml must match the version, and CHANGELOG.md needs a
 # "## <version>" section: it becomes the release notes.
 set -euo pipefail
 
 VERSION="${1:?Usage: $0 <version> [--finish]}"
 MODE="${2:-}"
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
-BUILD_DIR="/tmp/coucou-release-$VERSION"
-APP="$BUILD_DIR/Coucou.app"
-ZIP="$BUILD_DIR/Coucou.zip"
+BUILD_DIR="/tmp/mati-notch-release-$VERSION"
+APP="$BUILD_DIR/mati-notch.app"
+ZIP="$BUILD_DIR/mati-notch.zip"
 COMMIT_FILE="$BUILD_DIR/commit"
 TAG="v$VERSION"
 
@@ -63,17 +63,17 @@ if [ "$MODE" != "--finish" ]; then
   echo "Signing with: $IDENTITY"
 
   # ── 2. xcodegen + Release build ─────────────────────────────────────────────
-  cd "$REPO_ROOT/NotchBuddy"
+  cd "$REPO_ROOT/mati-notch"
   xcodegen generate
   PLIST_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" Resources/Info.plist)
-  [ "$PLIST_VERSION" = "$VERSION" ] || die "the app is version $PLIST_VERSION, not $VERSION: update CFBundleShortVersionString in NotchBuddy/project.yml"
+  [ "$PLIST_VERSION" = "$VERSION" ] || die "the app is version $PLIST_VERSION, not $VERSION: update CFBundleShortVersionString in mati-notch/project.yml"
 
   rm -rf "$BUILD_DIR" && mkdir -p "$BUILD_DIR"
   echo "$COMMIT" > "$COMMIT_FILE"
 
   xcodebuild \
-    -project NotchBuddy.xcodeproj \
-    -scheme NotchBuddy \
+    -project mati-notch.xcodeproj \
+    -scheme mati-notch \
     -configuration Release \
     build \
     CODE_SIGN_IDENTITY="$IDENTITY" \
@@ -85,11 +85,11 @@ if [ "$MODE" != "--finish" ]; then
   ditto -c -k --keepParent "$APP" "$ZIP"
   echo
   echo "Sending to Apple for notarization. If you stop the wait (Ctrl+C), Apple keeps going:"
-  echo "  check it with  xcrun notarytool history --keychain-profile coucou-notary"
+  echo "  check it with  xcrun notarytool history --keychain-profile mati-notch-notary"
   echo "  once Accepted  ./scripts/release.sh $VERSION --finish"
   echo
-  xcrun notarytool submit "$ZIP" --keychain-profile coucou-notary --wait \
-    || die "notarization failed: see xcrun notarytool log <id> --keychain-profile coucou-notary (the id is printed above)"
+  xcrun notarytool submit "$ZIP" --keychain-profile mati-notch-notary --wait \
+    || die "notarization failed: see xcrun notarytool log <id> --keychain-profile mati-notch-notary (the id is printed above)"
   cd "$REPO_ROOT"
 else
   [ -d "$APP" ] && [ -f "$COMMIT_FILE" ] || die "nothing to finish in $BUILD_DIR, run ./scripts/release.sh $VERSION first"
@@ -98,7 +98,7 @@ fi
 
 # ── 4. Staple + verify ────────────────────────────────────────────────────────
 xcrun stapler staple "$APP" \
-  || die "stapling failed: Apple has not accepted the build yet. Check xcrun notarytool history --keychain-profile coucou-notary, then run ./scripts/release.sh $VERSION --finish"
+  || die "stapling failed: Apple has not accepted the build yet. Check xcrun notarytool history --keychain-profile mati-notch-notary, then run ./scripts/release.sh $VERSION --finish"
 spctl -a -vv "$APP"
 
 # ── 5. Re-zip (with the stapled app) ──────────────────────────────────────────
@@ -107,7 +107,7 @@ ditto -c -k --keepParent "$APP" "$ZIP"
 echo "Release zip ready: $ZIP"
 
 # ── 6. Tag the built commit + GitHub release ──────────────────────────────────
-NOTES="Coucou $VERSION for macOS 15 or later (Apple silicon and Intel).
+NOTES="mati-notch $VERSION for macOS 15 or later (Apple silicon and Intel).
 
 Signed with a Developer ID and notarized by Apple.
 
@@ -117,11 +117,11 @@ $CHANGES
 
 ## Install
 
-1. Download Coucou.zip below and unzip it.
-2. Move Coucou.app to your Applications folder, replacing the old one if you have it.
+1. Download mati-notch.zip below and unzip it.
+2. Move mati-notch.app to your Applications folder, replacing the old one if you have it.
 3. Launch it, and click Open when macOS asks you to confirm.
 
-Linux and Windows: see the [README](https://github.com/Louis-CFM/coucou#readme)."
+Linux and Windows: see the [README](https://github.com/agustingarcia144/mati-notch#readme)."
 
 echo
 echo "──────── Release notes ────────"
@@ -138,9 +138,9 @@ git tag "$TAG" "$COMMIT"
 git push origin "$TAG"
 
 gh release create "$TAG" "$ZIP" \
-  --repo Louis-CFM/coucou \
-  --title "Coucou $VERSION" \
+  --repo agustingarcia144/mati-notch \
+  --title "mati-notch $VERSION" \
   --latest \
   --notes "$NOTES"
 
-echo "✓ $TAG released: https://github.com/Louis-CFM/coucou/releases/tag/$TAG"
+echo "✓ $TAG released: https://github.com/agustingarcia144/mati-notch/releases/tag/$TAG"

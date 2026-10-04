@@ -67,7 +67,7 @@ function claudeSection(status: HookStatus): HTMLElement {
       h("div", {
         class: "hint",
         text: status.installed
-          ? "Coucou is hooked into your Claude Code sessions. Tool calls, questions and permission requests show up in the island, and you can answer them there."
+          ? "mati-notch is hooked into your Claude Code sessions. Tool calls, questions and permission requests show up in the island, and you can answer them there."
           : "Install the hooks to see your Claude Code sessions in the island and approve permissions without leaving what you are doing.",
       }),
       h("div", { class: "row" },
@@ -84,7 +84,7 @@ function claudeSection(status: HookStatus): HTMLElement {
     if (!status.hookReady) {
       body.append(h("div", {
         class: "notice warn",
-        text: "coucou-hook.exe is not in place yet. Restart Coucou; if it still fails, build it with `cargo build -p coucou-hook`.",
+        text: "mati-notch-hook.exe is not in place yet. Restart mati-notch; if it still fails, build it with `cargo build -p mati-notch-hook`.",
       }));
     }
 
@@ -135,7 +135,7 @@ function claudeSection(status: HookStatus): HTMLElement {
         class: "hint",
         text: install
           ? "This is exactly what will change in your settings.json. Your own hooks are left untouched."
-          : "This removes Coucou's entries only. Your own hooks are left untouched.",
+          : "This removes mati-notch's entries only. Your own hooks are left untouched.",
       }),
       renderDiff(preview.diff),
       h("div", { class: "row" },
@@ -180,8 +180,32 @@ const MODELS: [string, string][] = [
 ];
 
 function apiSection(hasKey: boolean): HTMLElement {
+  const provider = h("select", {}) as HTMLSelectElement;
+  for (const [value, label] of [["claudeCLI", "Claude Code — subscription"], ["codexCLI", "Codex — subscription"], ["anthropic", "Anthropic API"]]) {
+    provider.append(h("option", { value, text: label }));
+  }
+  provider.value = settings.chatProvider;
+  provider.addEventListener("change", () => {
+    settings.chatProvider = provider.value as Settings["chatProvider"];
+    void save();
+  });
+  function cliField(label: string, key: "claudeCliPath" | "codexCliPath" | "claudeCliModel" | "codexCliModel", placeholder: string) {
+    const field = h("input", { value: settings[key], placeholder, style: "flex:1;min-width:0" }) as HTMLInputElement;
+    field.addEventListener("change", () => { settings[key] = field.value.trim(); void save(); });
+    return h("div", { class: "row" }, h("label", { text: label }), field);
+  }
+  const cli = h("div", {},
+    h("h3", { text: "Subscription accounts" }),
+    h("p", { class: "hint", text: "Sign in from your terminal with claude auth login or codex login. These providers use your subscription and reject API-key sign-in. No API key is needed in mati-notch." }),
+    h("div", { class: "row" }, h("label", { text: "Chat provider" }), provider),
+    cliField("Claude path", "claudeCliPath", "Automatic (or absolute executable path)"),
+    cliField("Claude model", "claudeCliModel", "default, sonnet, opus, or a model ID"),
+    cliField("Codex path", "codexCliPath", "Automatic (or absolute executable path)"),
+    cliField("Codex model", "codexCliModel", "default or a model ID"),
+    h("p", { class: "hint", text: "CLI chat supports conversation context and text attachments. Subscription limits apply." }),
+  );
   const dot = statusDot(hasKey);
-  const state = h("span", { class: "hint", text: hasKey ? "Key saved in the Windows Credential Manager." : "No key yet — the chat needs one." });
+  const state = h("span", { class: "hint", text: hasKey ? "Key saved in the Windows Credential Manager." : "No API key — needed only for Anthropic API chat." });
 
   const field = h("input", {
     type: "password",
@@ -200,7 +224,7 @@ function apiSection(hasKey: boolean): HTMLElement {
     dot.style.background = present ? "#22c55e" : "#f4505e";
     state.textContent = present
       ? "Key saved in the Windows Credential Manager."
-      : "No key yet — the chat needs one.";
+      : "No API key — needed only for Anthropic API chat.";
     field.placeholder = present ? "••••••••••••  (stored)" : "sk-ant-...";
     clearBtn.style.display = present ? "" : "none";
   }
@@ -246,7 +270,9 @@ function apiSection(hasKey: boolean): HTMLElement {
   return h(
     "section",
     {},
-    h("h2", {}, dot, h("span", { text: "Claude" })),
+    h("h2", { text: "Chat" }),
+    cli,
+    h("h3", {}, dot, h("span", { text: "Anthropic API" })),
     state,
     h("div", { class: "row" }, h("label", { text: "API key" }), field, saveBtn, clearBtn),
     h("div", { class: "row" }, h("label", { text: "Model" }), model),
@@ -292,7 +318,7 @@ function integrationsSection(present: Record<string, boolean>): HTMLElement {
 
   function updateNote() {
     const used = settings.activeIntegrations.length;
-    note.textContent = `Pick up to ${MAX_ACTIVE} pills to show next to Mochi — ${used}/${MAX_ACTIVE} in use. Keys are stored in the Windows Credential Manager, never on disk.`;
+    note.textContent = `Pick up to ${MAX_ACTIVE} pills to show next to mati-notch — ${used}/${MAX_ACTIVE} in use. Keys are stored in the Windows Credential Manager, never on disk.`;
   }
 
   for (const def of INTEGRATIONS) {
@@ -440,7 +466,7 @@ async function main() {
 
   clear(root);
   root.append(
-    h("h1", {}, h("span", { text: "Coucou" }), h("span", { class: "version", text: version })),
+    h("h1", {}, h("span", { text: "mati-notch" }), h("span", { class: "version", text: version })),
     claudeSection(status),
     apiSection(hasKey),
     integrationsSection(present),

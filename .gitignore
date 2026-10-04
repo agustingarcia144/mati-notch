@@ -1,7 +1,7 @@
 # Build artefacts
-NotchBuddy/build/
-NotchBuddy/NotchBuddy.xcodeproj/project.xcworkspace/xcuserdata/
-NotchBuddy/NotchBuddy.xcodeproj/xcuserdata/
+mati-notch/build/
+mati-notch/mati-notch.xcodeproj/project.xcworkspace/xcuserdata/
+mati-notch/mati-notch.xcodeproj/xcuserdata/
 *.xcuserstate
 
 # Xcode DerivedData (outside repo — listed for clarity)

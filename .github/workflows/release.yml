@@ -17,13 +17,13 @@ jobs:
         run: brew install xcodegen
 
       - name: Generate project
-        run: cd NotchBuddy && xcodegen
+        run: cd mati-notch && xcodegen
 
       - name: Build Release (no signing)
         run: |
           xcodebuild \
-            -project NotchBuddy/NotchBuddy.xcodeproj \
-            -scheme NotchBuddy \
+            -project mati-notch/mati-notch.xcodeproj \
+            -scheme mati-notch \
             -configuration Release \
             build \
             CODE_SIGNING_ALLOWED=NO \

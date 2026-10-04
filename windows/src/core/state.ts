@@ -1,7 +1,7 @@
 // App state — mirror of AppState.swift (the parts the island needs).
 
 import type { BotEmoteName, BotStateName, IslandMode, IslandViewName } from "./layout";
-import type { EyeShape } from "../mochi/engine";
+import type { EyeShape } from "../mati-notch/engine";
 
 export type AgentSource = "claudeCode" | "n8n" | "agent";
 export type PillBadge = "approval" | "finished" | "error";
@@ -92,6 +92,11 @@ export interface Settings {
   hooksInstalled: boolean;
   /** Claude model used by the chat. */
   model: string;
+  chatProvider: "claudeCLI" | "codexCLI" | "anthropic";
+  claudeCliPath: string;
+  codexCliPath: string;
+  claudeCliModel: string;
+  codexCliModel: string;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -106,6 +111,11 @@ export const DEFAULT_SETTINGS: Settings = {
   autostart: false,
   hooksInstalled: false,
   model: "claude-opus-5",
+  chatProvider: "claudeCLI",
+  claudeCliPath: "",
+  codexCliPath: "",
+  claudeCliModel: "default",
+  codexCliModel: "default",
 };
 
 type Listener = () => void;

@@ -89,7 +89,7 @@ export const VIEW_LAYOUTS: Record<IslandViewName, ViewLayout> = {
 };
 
 // The upload views above are only the fallback geometry. Once a file is actually
-// dropped the whole sequence — Mochi included — is drawn by src/upload, which
+// dropped the whole sequence — mati-notch included — is drawn by src/upload, which
 // owns its own constants (USC) straight from UploadSequenceEngine.swift.
 
 /** Chat view grows with the conversation — IslandContainer.chatPromptHeight. */
@@ -199,9 +199,7 @@ const PROJECT_COLORS: Record<string, string> = {
   "ig post": "#7C5CFF",
   "louisraille.fr": "#38BDF8",
   louisraille: "#38BDF8",
-  "notch buddy": "#EC4899",
-  "notch-buddy": "#EC4899",
-  notchbuddy: "#EC4899",
+  "mati-notch": "#EC4899",
 };
 
 const FALLBACK_COLORS = ["#22C55E", "#EAB308", "#60A5FA", "#E879F9"];
